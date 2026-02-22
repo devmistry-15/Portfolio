@@ -1,0 +1,51 @@
+.role{
+    animation: floatIn 5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(300px);
+}
+
+.name{
+    animation: floatIn 5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(300px);
+}
+
+.intro{
+    animation: floatIn 5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(300px);
+}
+
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-wrapper img{
+    animation: fadeUp 5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-300px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description{
+    animation: slideRight 5s ease-out;
+}
+
+@keyframes slideRight {
+  0%{
+     transform: translateX(900px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,307 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080715;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    border-radius: 30px;
+    background: rgba(10, 2, 41, 0.8);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    box-shadow: 2px 2px 4px white;
+}
+
+.logo a {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 2px 3px 2px rgb(230, 13, 71);
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #bdbcbc;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links li a:hover {
+    color: chocolate;
+    transform: translateY(-5px);
+}
+
+/* ================= SECTIONS ================= */
+section {
+    min-height: 100vh;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    scroll-margin-top: 120px;
+}
+
+#home {
+    background: #0a091a;
+}
+
+#about {
+    background: #0c0b1f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= HERO ================= */
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-left {
+    flex: 1;
+    color: white;
+}
+
+.hero-left p {
+    line-height: 1.4;
+}
+
+.intro {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.role {
+    font-size: 48px;
+    color: #bebebe;
+}
+
+.description{
+    font-size: 20px;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    width: 350px;
+    height: 350px;
+    border: none;
+    border-radius: 50%;
+}
+
+.image-wrapper img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px white;
+}
+
+
+
+/* ================= LARGE TV (1600px and above) ================= */
+@media (min-width: 1600px) {
+
+    .name {
+        font-size: 80px;
+    }
+
+    .role {
+        font-size: 60px;
+    }
+
+    .description {
+        font-size: 24px;
+        max-width: 800px;
+    }
+
+    .image-wrapper,
+    .image-wrapper img {
+        width: 450px;
+        height: 450px;
+    }
+}
+
+
+/* ================= DESKTOP / PC (1200px - 1599px) ================= */
+@media (max-width: 1599px) {
+
+    .name {
+        font-size: 60px;
+    }
+
+    .role {
+        font-size: 45px;
+    }
+    .hero{
+        padding: 15% 0;
+    }
+}
+
+
+/* ================= LAPTOP (992px - 1199px) ================= */
+@media (max-width: 1199px) {
+
+    .hero {
+        gap: 40px;
+        padding: 20% 0;
+    }
+
+    .name {
+        font-size: 50px;
+    }
+
+    .role {
+        font-size: 38px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .image-wrapper,
+    .image-wrapper img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+/* ================= TABLET (768px - 991px) ================= */
+@media (max-width: 991px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        margin-bottom: 40px;
+    }
+
+    .name {
+        font-size: 42px;
+    }
+
+    .role {
+        font-size: 32px;
+    }
+
+    .description {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .image-wrapper,
+    .image-wrapper img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .nav-links ul {
+        gap: 20px;
+    }
+}
+
+
+/* ================= MOBILE (Below 768px) ================= */
+@media (max-width: 767px) {
+
+    header {
+        top: 10px;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .nav-links ul {
+        gap: 15px;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .role {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .image-wrapper,
+    .image-wrapper img {
+        width: 200px;
+        height: 200px;
+    }
+
+    section {
+        padding: 20% 5%;
+    }
+}
