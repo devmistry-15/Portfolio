@@ -1,51 +1,171 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animation.css">
-</head>
-<body>
-
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#home">Dev</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Dev Mistry</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="main-header">
+      <nav class="main-navbar">
+        <div class="brand-logo">Dev</div>
+        <div class="navigation-links">
+          <ul class="nav-list">
+            <li><a href="#heroSection">Home</a></li>
+            <li><a href="#profileSection">About</a></li>
+            <li><a href="#careerSection">Resume</a></li>
+          </ul>
         </div>
+      </nav>
+    </header>
 
-        <div class="nav-links">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    <main>
+      <!-- ================= HERO SECTION ================= -->
+      <section id="heroSection" class="hero-section-wrapper">
+        <div class="hero-container">
+          <div class="hero-left-content">
+            <p class="intro-text">Hi, I'm</p>
+            <p class="developer-name">Dev Mistry</p>
 
-<main>
-    <section id="home">
-        <div class="hero">
-            <div class="hero-left">
-                <p class="intro">Hi, I am</p>
-                <p class="name">Dev Mistry</p>
-                <p class="role">Frontend Developer</p>
-                <p class="description">I’m a Frontend Developer who builds clean and responsive websites. I enjoy creating simple, interactive, and user-friendly web experiences.</p>
+            <div class="typing-box">
+              <span class="typing-text"></span>
+              <span class="typing-blink"></span>
             </div>
 
-            <div class="hero-right">
-                <div class="image-wrapper">
-                   <img src="images\Dev.png" alt="">
-                </div>
+            <div class="skills-highlight">
+              <p class="skills-heading">Best Skills on</p>
+              <div class="skills-icons">
+                <img src="images/html.png" alt="HTML" />
+                <img src="images/css-3.png" alt="CSS" />
+                <img src="images/java-script.png" alt="JavaScript" />
+              </div>
             </div>
+          </div>
+
+          <div class="hero-right-content">
+            <img src="images/Dev.png" alt="Dev Mistry" />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section id="about">
-        <h1>About Section</h1>
-    </section>
-</main>
+      <!-- ================= ABOUT SECTION ================= -->
+      <section id="profileSection" class="profile-section-wrapper">
+        <div class="profile-container">
+          <h2 class="profile-title">About Me</h2>
 
-</body>
+          <p class="profile-description">
+            I am a passionate Frontend Developer who loves building modern,
+            responsive, and user-friendly web interfaces. I specialize in
+            creating clean UI designs with smooth interactions using HTML, CSS,
+            JavaScript, and React.
+          </p>
+
+          <div class="profile-skills-area">
+            <div class="profile-skill-box">
+              <div class="skill-header">
+                <span>HTML</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill html-skill"></div>
+              </div>
+            </div>
+
+            <div class="profile-skill-box">
+              <div class="skill-header">
+                <span>CSS</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill css-skill"></div>
+              </div>
+            </div>
+
+            <div class="profile-skill-box">
+              <div class="skill-header">
+                <span>JavaScript</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill js-skill"></div>
+              </div>
+            </div>
+
+            <div class="profile-skill-box">
+              <div class="skill-header">
+                <span>React</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-progress-track">
+                <div class="skill-progress-fill react-skill"></div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#careerSection" class="primary-button">Resume</a>
+        </div>
+      </section>
+
+      <!-- ================= RESUME SECTION ================= -->
+      <section id="careerSection" class="career-section-wrapper">
+        <div class="career-container">
+          <h2 class="career-title">My Resume</h2>
+
+          <div class="career-timeline">
+            <div class="career-item">
+              <div class="career-content">
+                <span class="career-year">2025 - Present</span>
+                <h3>Frontend Developer</h3>
+                <h4>Work at Success Innovative Technologies</h4>
+                <p>
+                  Building responsive and modern web applications using HTML,
+                  CSS, JavaScript, and React. Focused on UI/UX design and
+                  performance optimization.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="career-timeline">
+            <div class="career-item">
+              <div class="career-content">
+                <span class="career-year">03/2025 - 11/2025</span>
+                <h3>Frontend Developer</h3>
+                <h4>Learning at Tops Technologies</h4>
+                <p>
+                  Building responsive and modern web applications using HTML,
+                  CSS, JavaScript, and React. Focused on UI/UX design and
+                  performance optimization.
+                </p>
+              </div>
+            </div>
+
+            <div class="career-item">
+              <div class="career-content">
+                <span class="career-year">2019 - 2022</span>
+                <h3>Computer Science Engineering</h3>
+                <h4>
+                  S.N.Patel Institute of Technology (SNPIT), Bardoli, Surat
+                </h4>
+                <h5>
+                  (Formerly Vidyabharti Trust Institute of Technology & Research
+                  Center)
+                </h5>
+                <p>
+                  Learned programming fundamentals, web technologies, and
+                  software development concepts.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="primary-button">Download Resume</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
