@@ -3,168 +3,238 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Dev Mistry</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Dev Mistry | Frontend Developer & Designer</title>
+
+    <!-- Fonts: Bold serif for display + refined sans-serif for body -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Sora:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
-    <!-- ================= HEADER ================= -->
-    <header class="main-header">
-      <nav class="main-navbar">
-        <div class="brand-logo">Dev</div>
-        <div class="navigation-links">
-          <ul class="nav-list">
-            <li><a href="#heroSection">Home</a></li>
-            <li><a href="#profileSection">About</a></li>
-            <li><a href="#careerSection">Resume</a></li>
-          </ul>
+    <!-- NAVBAR -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Dev</h2>
+        </div>
+
+        <ul class="links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu">
+          <i class="fa-solid fa-bars"></i>
         </div>
       </nav>
     </header>
 
-    <main>
-      <!-- ================= HERO SECTION ================= -->
-      <section id="heroSection" class="hero-section-wrapper">
-        <div class="hero-container">
-          <div class="hero-left-content">
-            <p class="intro-text">Hi, I'm</p>
-            <p class="developer-name">Dev Mistry</p>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h3>Hi, I'm</h3>
+        <h1>Dev Mistry</h1>
+        <p class="subtitle">
+          I'm <span class="typing-text"> a Frontend Developer.</span
+          ><span class="typing-blink">|</span>
+        </p>
 
-            <div class="typing-box">
-              <span class="typing-text"></span>
-              <span class="typing-blink"></span>
-            </div>
-
-            <div class="skills-highlight">
-              <p class="skills-heading">Best Skills on</p>
-              <div class="skills-icons">
-                <img src="images/html.png" alt="HTML" />
-                <img src="images/css-3.png" alt="CSS" />
-                <img src="images/java-script.png" alt="JavaScript" />
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-right-content">
-            <img src="images/Dev.png" alt="Dev Mistry" />
-          </div>
+        <div class="buttons">
+          <button class="btn1">Hire Me</button>
+          <button class="btn2">Download CV</button>
         </div>
-      </section>
+      </div>
 
-      <!-- ================= ABOUT SECTION ================= -->
-      <section id="profileSection" class="profile-section-wrapper">
-        <div class="profile-container">
-          <h2 class="profile-title">About Me</h2>
+      <div class="hero-image">
+        <img
+          src="images/Dev.png"
+          alt="Dev"
+        />
+      </div>
+    </section>
 
-          <p class="profile-description">
-            I am a passionate Frontend Developer who loves building modern,
-            responsive, and user-friendly web interfaces. I specialize in
-            creating clean UI designs with smooth interactions using HTML, CSS,
-            JavaScript, and React.
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-container">
+        <div class="about-image">
+          <img
+            src="images/Dev.png"
+            alt="Dev Mistry"
+          />
+        </div>
+
+        <div class="about-text">
+          <p>
+            I'm Dev Mistry, a passionate Frontend Developer with a keen eye for
+            design and user experience. I specialize in crafting beautiful,
+            responsive, and interactive websites that not only look stunning but
+            also deliver exceptional functionality.
           </p>
 
-          <div class="profile-skills-area">
-            <div class="profile-skill-box">
-              <div class="skill-header">
-                <span>HTML</span>
-                <span>95%</span>
-              </div>
-              <div class="skill-progress-track">
-                <div class="skill-progress-fill html-skill"></div>
-              </div>
-            </div>
+          <p>
+            With expertise in HTML, CSS, JavaScript, React, and modern web
+            technologies, I create digital experiences that engage users and
+            drive results. My goal is to build fast, accessible, and visually
+            compelling web applications that stand out in today's digital
+            landscape.
+          </p>
 
-            <div class="profile-skill-box">
-              <div class="skill-header">
-                <span>CSS</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-progress-track">
-                <div class="skill-progress-fill css-skill"></div>
-              </div>
-            </div>
-
-            <div class="profile-skill-box">
-              <div class="skill-header">
-                <span>JavaScript</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-progress-track">
-                <div class="skill-progress-fill js-skill"></div>
-              </div>
-            </div>
-
-            <div class="profile-skill-box">
-              <div class="skill-header">
-                <span>React</span>
-                <span>80%</span>
-              </div>
-              <div class="skill-progress-track">
-                <div class="skill-progress-fill react-skill"></div>
-              </div>
-            </div>
-          </div>
-
-          <a href="#careerSection" class="primary-button">Resume</a>
+          <p>
+            When I'm not coding, you'll find me exploring new design trends,
+            contributing to open-source projects, or sharing knowledge with the
+            developer community.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= RESUME SECTION ================= -->
-      <section id="careerSection" class="career-section-wrapper">
-        <div class="career-container">
-          <h2 class="career-title">My Resume</h2>
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="skills">
+      <h2 class="section-title">My Skills</h2>
 
-          <div class="career-timeline">
-            <div class="career-item">
-              <div class="career-content">
-                <span class="career-year">2025 - Present</span>
-                <h3>Frontend Developer</h3>
-                <h4>Work at Success Innovative Technologies</h4>
-                <p>
-                  Building responsive and modern web applications using HTML,
-                  CSS, JavaScript, and React. Focused on UI/UX design and
-                  performance optimization.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="career-timeline">
-            <div class="career-item">
-              <div class="career-content">
-                <span class="career-year">03/2025 - 11/2025</span>
-                <h3>Frontend Developer</h3>
-                <h4>Learning at Tops Technologies</h4>
-                <p>
-                  Building responsive and modern web applications using HTML,
-                  CSS, JavaScript, and React. Focused on UI/UX design and
-                  performance optimization.
-                </p>
-              </div>
-            </div>
-
-            <div class="career-item">
-              <div class="career-content">
-                <span class="career-year">2019 - 2022</span>
-                <h3>Computer Science Engineering</h3>
-                <h4>
-                  S.N.Patel Institute of Technology (SNPIT), Bardoli, Surat
-                </h4>
-                <h5>
-                  (Formerly Vidyabharti Trust Institute of Technology & Research
-                  Center)
-                </h5>
-                <p>
-                  Learned programming fundamentals, web technologies, and
-                  software development concepts.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <a href="#" class="primary-button">Download Resume</a>
+      <div class="skills-container">
+        <div class="skill-card">
+          <i class="fa-brands fa-html5"></i>
+          <h3>HTML5</h3>
         </div>
-      </section>
-    </main>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-css3-alt"></i>
+          <h3>CSS3</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-js"></i>
+          <h3>JavaScript</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-react"></i>
+          <h3>React</h3>
+        </div>
+
+        <div class="skill-card">
+          <i class="fa-brands fa-figma"></i>
+          <h3>UI/UX Design</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects" id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="projects-container">
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="project-content">
+            <h3>Premium Portfolio</h3>
+            <p>
+              Modern responsive portfolio website with smooth animations and
+              premium design elements.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <div class="project-content">
+            <h3>Landing Page</h3>
+            <p>
+              High-converting product landing page with compelling copy and
+              engaging visuals.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="project-content">
+            <h3>Admin Dashboard</h3>
+            <p>
+              Professional admin dashboard interface with real-time data
+              visualization and controls.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" name="name" required />
+        <input type="email" placeholder="Your Email" name="email" required />
+        <textarea placeholder="Your Message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+        <div class="success-message" id="successMessage">
+          ✓ Message sent successfully! I'll get back to you soon.
+        </div>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Dev Mistry. All Rights Reserved.</p>
+
+      <div class="socials">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Twitter"
+        >
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a
+          href="https://codepen.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="CodePen"
+        >
+          <i class="fa-brands fa-codepen"></i>
+        </a>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

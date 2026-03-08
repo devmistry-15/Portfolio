@@ -1,130 +1,126 @@
-/* ===============================
-   NAVIGATION ACTIVE LINK
-================================= */
-
-const navLinks = document.querySelectorAll(".nav-list li a");
-
-function setActiveLink() {
-    let currentPage = window.location.hash;
-
-    if (currentPage === "" || currentPage === "#") {
-        currentPage = "#heroSection";
-    }
-
-    navLinks.forEach(link => {
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
-    });
-}
-
-setActiveLink();
-window.addEventListener("hashchange", setActiveLink);
-
-
-
-/* ===============================
-   TYPING ANIMATION
-================================= */
-
+// ===== TYPING ANIMATION =====
 const typingElement = document.querySelector(".typing-text");
 const cursorElement = document.querySelector(".typing-blink");
 
 const roles = [
-    "a Frontend Developer.",
-    "a Web Designer.",
-    "a Creative Coder."
+  "a Frontend Developer.",
+  "a Web Designer.",
+  "a Creative Coder.",
+  "a UI/UX Enthusiast.",
 ];
 
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let isPaused = false;
 
 function typeAnimation() {
+  if (!typingElement) return;
 
-    if (!typingElement) return;
+  const currentRole = roles[roleIndex];
 
-    const currentRole = roles[roleIndex];
+  if (isDeleting) {
+    typingElement.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingElement.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+  }
 
-    if (isDeleting) {
-        typingElement.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingElement.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-    }
+  if (!isDeleting && charIndex === currentRole.length) {
+    setTimeout(() => {
+      isDeleting = true;
+    }, 2000);
+  }
 
-    cursorElement.style.animation = "cursor-blink 0.7s infinite";
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+  }
 
-    // When word fully typed
-    if (!isDeleting && charIndex === currentRole.length) {
-        isPaused = true;
-        cursorElement.style.animation = "none";
-
-        setTimeout(() => {
-            isDeleting = true;
-            isPaused = false;
-            cursorElement.style.animation = "cursor-blink 0.7s infinite";
-        }, 2000);
-    }
-
-    // When word fully deleted
-    if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-    }
-
-    let typingSpeed = isDeleting ? 50 : 100;
-
-    if (isPaused) typingSpeed = 2000;
-
-    setTimeout(typeAnimation, typingSpeed);
+  const speed = isDeleting ? 50 : 100;
+  setTimeout(typeAnimation, speed);
 }
 
-// Start animation
-if (typingElement) {
-    setTimeout(typeAnimation, 500);
-}
+setTimeout(typeAnimation, 500);
 
-
-
-/* ===============================
-   SMOOTH SCROLL
-================================= */
-
-document.querySelectorAll('.nav-list a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute("href"));
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-    });
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 });
 
-
-
-/* ===============================
-   HANDLE PAGE LOAD WITH HASH
-================================= */
-
+// ===== HANDLE PAGE LOAD WITH HASH =====
 if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-
-    if (target) {
-        setTimeout(() => {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }, 100);
-    }
+  const target = document.querySelector(window.location.hash);
+  if (target) {
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+  }
 }
+
+// ===== CONTACT FORM SUBMISSION =====
+const contactForm = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Get form data
+  const formData = new FormData(this);
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const message = formData.get("message");
+
+  // Simple validation
+  if (name.trim() && email.trim() && message.trim()) {
+    // Show success message
+    successMessage.classList.add("show");
+
+    // Reset form
+    contactForm.reset();
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      successMessage.classList.remove("show");
+    }, 5000);
+
+    // Log data (in production, this would send to a server)
+    console.log("Form submitted:", { name, email, message });
+  }
+});
+
+// ===== BUTTON INTERACTIONS =====
+document.querySelector(".btn1").addEventListener("click", () => {
+  alert(
+    "Thanks for your interest! Please send me a message through the contact form.",
+  );
+});
+
+document.querySelector(".btn2").addEventListener("click", () => {
+  alert("CV download functionality can be connected to a real file.");
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px",
+};
+
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll("section").forEach((section) => {
+  observer.observe(section);
+});
